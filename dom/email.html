@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>E-mail</title>
+    <link rel='stylesheet' href='#'>
+    <style>
+        .email{
+            font-size: 14px;
+            font-family: sans-serif;
+        }
+        .texto {
+            
+            font-weight: none;
+            font-size: 20px;
+        }
+        .centralizando-div {
+            display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center; 
+        }
+        button {
+            border-radius: 35px;
+            padding: 15px 35px;
+            font-size: 16px;
+            background-color: rgba(17, 232, 232, 0.789);
+            color: white;
+            border: none;
+            justify-content: center;
+        }
+
+        button:hover{
+            background-color: lightseagreen;
+            cursor: pointer;
+            box-shadow: 1px 2px 2px 1px dodgerblue;
+            border: solid 1px gray;
+        }
+
+        .banner-home {
+            overflow: hidden;  
+            display: block;
+        }
+
+        .banner-home > .circle-top {
+            width: 350px;
+            height: 350px;
+            line-height: 200px;
+            border-radius: 50%; /* the magic */
+            -moz-border-radius: 50%;
+            -webkit-border-radius: 50%;
+            text-align: center;
+            border: 10px solid rgba(17, 232, 232, 0.785);
+            position: relative;
+            right: -78%;
+            top: -235px;
+            display: flex;
+            margin-bottom: -325px;
+        }
+        .banner-home > .circle-bottom {
+            width: 350px;
+            height: 350px;
+            line-height: 200px;
+            border-radius: 50%; /* the magic */
+            -moz-border-radius: 50%;
+            -webkit-border-radius: 50%;
+            text-align: center;
+            border: 10px solid rgba(17, 232, 232, 0.785);
+            position: relative;
+            left: -180px;
+            top: -100px;
+            display: flex;
+            margin-bottom: -335px;
+        }
+
+        .z-index-relative {
+            z-index: 2;
+            position: relative;
+        }
+
+
+
+
+
+
+        
+
+
+
+        ul {
+            text-align: justify;
+            position: relative;
+            overflow: hidden;
+            padding: 0;
+        }
+        ul:before {
+            content: '';
+            width: 100%;
+            border: 2px solid rgba(17, 232, 232, 0.789);
+            position: absolute;
+            top: 1em;
+            z-index: -1;
+        }
+        .active:after {
+            content: '';
+            width: 100%;
+            border: 2px solid rgba(17, 232, 232, 0.789);
+            position: absolute;
+            top: 1em;
+            margin-top: -7px;
+            z-index: -1;
+        }
+
+        .active:after {
+            border-color: rgb(187, 186, 186);
+        }
+        ul:after {
+            content: "";
+            display: inline-block;
+            width: 100%;
+        }
+        li {
+            width: 1.5em;
+            height: 1.5em;
+            text-align: center;
+            border-radius: 100%;
+            background: rgba(17, 232, 232, 0.789);
+            margin: 0 1em;
+            display: inline-block;
+            color: white;
+            font-size: 1.5em;
+        }
+
+        .marker-number {
+            font-size: 28px;
+        }
+
+        li.active {
+            background: #04497b;
+            background: #1976d2;
+        }
+
+        .active ~ li {
+            background: rgb(187, 186, 186);
+        }
+
+        span.marker-text {
+            font-style: normal;
+            color: grey;
+            font-size: 14px;
+            width: 70px;
+            display: block;
+            margin-left: -20px;
+            line-height: 20px;
+        }
+
+
+
+        /* .stepper-wrapper {
+        font-family: Arial;
+        margin-top: 50px;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+        }
+        .stepper-item {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex: 1;
+
+        @media (max-width: 768px) {
+            font-size: 12px;
+        }
+        }
+
+        .stepper-item::before {
+        position: absolute;
+        content: "";
+        border-bottom: 2px solid #ccc;
+        width: 100%;
+        top: 20px;
+        left: -50%;
+        z-index: 2;
+        }
+
+        .stepper-item::after {
+        position: absolute;
+        content: "";
+        border-bottom: 2px solid #ccc;
+        width: 100%;
+        top: 20px;
+        left: 50%;
+        z-index: 2;
+        }
+
+        .stepper-item .step-counter {
+        position: relative;
+        z-index: 5;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: #ccc;
+        margin-bottom: 6px;
+        }
+
+        .stepper-item.active {
+        font-weight: bold;
+        }
+
+        .stepper-item.completed .step-counter {
+        background-color: #1976d2;
+        }
+
+        .stepper-item.completed::after {
+        position: absolute;
+        content: "";
+        border-bottom: 2px solid #1976d2;
+        width: 100%;
+        top: 20px;
+        left: 50%;
+        z-index: 3;
+        }
+
+        .stepper-item:first-child::before {
+        content: none;
+        }
+        .stepper-item:last-child::after {
+        content: none;
+        } */
+
+    </style>
+</head>
+
+<body class="email">
+    <div class="centralizando-div">
+        <div style="width: 900px; display: flex; justify-content: center; color: white; border-radius: 5px;">
+             <img src="./imgs/pergunte.png" alt="" style="width: 300px; margin: 25px 0px;" />
+        </div>
+    </div>
+
+    <hr style="width: 60%;" >
+
+    <div class="centralizando-div">
+        <div style="width: 1000px; margin: 20px 60px; ">
+            <div class="centralizando-div" style=" justify-content: start">
+                <p > <span style="font-weight: bold;"> Prezado: </span>( {{ Pedro Santos Antunes}} ) </p>
+            </div>
+            <div class="centralizando-div" style=" justify-content: space-between">
+                <p >O seu protocolo é: <span style="font-weight: bold;"> {{ 20304310 }}</span></p>
+                <p >Data solicitação: <span style="font-weight: bold;"> {{ 13/07/2022 }}<span></p>
+            </div>
+            <div class="centralizando-div" style=" justify-content: space-between">
+                <div style=" width: 70%;">
+                    <p> Recebemos no nosso sistema a sua pergunta. Aguarde o nosso retorno. <br/> Você será notificado assim que a pergunta for respondida pelos nossos especialistas...</p>
+                    <p> </p>
+                </div>
+                
+                <p>Status: <span style="font-weight: bold;"> {{ Em Aberto }}</span></p>
+            </div>
+        </div>
+        
+       
+    </div>
+
+ 
+    <!-- <h2 style="text-align: center;">
+      <a href="https://devrecipes.net/step-progres-bar-with-pure-css/">
+        Devrecipes.net - Step progress bar with pure CSS
+
+      </a>
+    </h2>
+    <div style="" class="stepper-wrapper centralizando-div">
+      <div class="stepper-item completed">
+        <div class="step-counter">1</div>
+        <div class="step-name">First</div>
+      </div>
+      <div class="stepper-item">
+        <div class="step-counter">2</div>
+        <div class="step-name">Second</div>
+      </div>
+      <div class="stepper-item active">
+        <div class="step-counter">3</div>
+        <div class="step-name">Third</div>
+      </div>
+      <div class="stepper-item">
+        <div class="step-counter">4</div>
+        <div class="step-name">Forth</div>
+      </div>
+    </div> -->
+
+
+    
+
+    <div class="centralizando-div">
+        <div style="width: 900px; justify-content: center; color: white; border-radius: 5px;">
+            <ul>
+                <li class="active"><span class="marker-number">1</span> <span class="marker-text">Select Car</span></li>
+                <li><span class="marker-number">2</span> <span class="marker-text">Questions</span></li>
+                <li><span class="marker-number">3</span> <span class="marker-text">Problems</span></li>
+                <li ><span class="marker-number">4</span> <span class="marker-text">Inspection</span></li>
+            </ul> 
+        </div>
+        
+    </div>
+        
+
+    
+    <div style="margin: 10px 60px; " class="centralizando-div row">
+        <div style="width: 900px; padding: 0px 50px; background-color: #1976d2; justify-content: center; color: white; border-radius: 5px;" class="banner-home" >
+            <div class="circle-top"></div>
+            <div  class="col-12 col-md-10 q-py-md q-pt-lg z-index-relative">
+                <p class="text-subtitle1 text-weight-bold ">
+                    Controladoria Geral do Estado <br> do Mato Grosso
+                </p>
+            </div>
+            <div class="centralizando-div ">
+                <p class="texto" style=" padding: 4px;" >
+                    <a href=""></a>
+                    Este Canal destina-se a consultas formuladas por servidores e agentes públicos do Poder
+                    Executivo do Estado de Mato Grosso, cujo tema seja relacionado com o desempenho de suas
+                    funções.
+                </p>
+            </div>
+            <div  class="centralizando-div col-12 col-md-10  flex justify-center q-py-md q-mb-md">
+                <button rounded class="q-px-md q-py-md text-subtitle1" label="" size="" no-caps @click="abrirHome()"> Consulte aqui questionamentos já respondidos </button>
+            </div>
+            <div class="centralizando-div col-12 col-md-8 flex justify-center q-py-sm">
+                <p class="texto text-h5 text-center">
+                    Serão rejeitadas as consultas relacionadas com o interesse privado.
+                    <br>A resposta fornecida expressará o entendimento institucional.
+                </p>
+            </div>
+            <div class="centralizando-div col-12 col-md-10  flex justify-center q-py-md z-index-relative">
+                <button rounded class="q-px-xl q-py-md text-subtitle1" label="" size="" no-caps @click="abrirPortaria()"> Consulte aqui a legislação </button>
+            </div>
+            <div style="display: flex; flex-direction: row; justify-content: end; align-items: center; margin-top: 25px; margin-left: 310px" class="col-12 col-md-10 flex justify-end q-pb-sm q-mb-sm z-index-relative">
+                <img src="./imgs/CGE-footer.png" alt="" style="height: 75px" />
+            </div>
+            <div class="circle-bottom"></div>
+        </div>
+    </div>
+    <script>
+        
+    </script>
+</body>
+
+</html>
