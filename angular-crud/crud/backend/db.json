@@ -8,17 +8,32 @@
     {
       "id": 2,
       "name": "Notebook Mac Pro",
-      "price": 12000.99
+      "price": "12000.00"
     },
     {
       "id": 3,
-      "name": "Samsung S20+",
-      "price": 5000
+      "name": "Samsung S20+ plus",
+      "price": "5500"
     },
     {
       "name": "Geladeira",
       "price": 1914.99,
       "id": 4
+    },
+    {
+      "name": "Veio do Form",
+      "price": "9.99",
+      "id": 6
+    },
+    {
+      "name": "Novo",
+      "price": "22",
+      "id": 7
+    },
+    {
+      "name": "teste",
+      "price": "100",
+      "id": 8
     }
   ]
 }

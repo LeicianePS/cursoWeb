@@ -1,0 +1,25 @@
+p{
+    color: darkblue;
+    font-size: 2rem;
+    margin: 25px 10px;
+}
+ul{
+    color: black !important;
+}
+
+table {
+    margin-top: 5%;
+    width: 100%;
+}
+
+.edit {
+    margin-right: 5px;
+}
+
+.edit > i {
+    color: #d9cd26;
+}
+
+.delete > i {
+    color: #e35e6b;
+}
