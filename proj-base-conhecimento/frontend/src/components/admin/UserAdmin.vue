@@ -89,7 +89,6 @@ export default {
             const url = `${baseApiUrl}/users`
             axios.get(url).then(res => {
                 this.users = res.data
-                
             })
         },
         reset() {
@@ -99,7 +98,7 @@ export default {
         },
         save() {
             const method = this.user.id ? 'put' : 'post'
-            const id = this.user.id ? `${this.user.id}` : ''
+            const id = this.user.id ? `/${this.user.id}` : ''
 
             axios[method](`${baseApiUrl}/users${id}`, this.user)
                 .then(() => {

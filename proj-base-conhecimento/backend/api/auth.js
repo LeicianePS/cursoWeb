@@ -25,6 +25,7 @@ module.exports = app => {
             email: user.email,
             admin: user.admin,
             iat: now,
+            //exp: now + 20
             exp: now + (60 * 60 * 24 * 3)
         }
 
@@ -37,8 +38,8 @@ module.exports = app => {
     const validateToken = async (req, res) => {
         const userData = req.body || null
         try {
-            if(userdata) {
-                const token = jwt.decode(userdata.token, authSecret)
+            if(userData) {
+                const token = jwt.decode(userData.token, authSecret)
                 if(new Date(token.exp * 1000) > new Date()) {
                     return res.send(true)
                 }
