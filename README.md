@@ -1,2 +1,2 @@
 # cursoWeb
-Projetos do curso web moderno com diversas tecnologias e frameworks como JQuery, React, Vue, Angular entre outras.
+Projetos do curso Web Moderno - Cod3r, com diversas tecnologias e frameworks como JQuery, React, Vue, Angular entre outras.
