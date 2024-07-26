@@ -5,6 +5,19 @@ module.exports = app => {
     app.post('/signin', app.api.auth.signin)
     app.post('/validateToken', app.api.auth.validateToken)
 
+
+
+
+    
+    app.post('/upload', app.api.user.upload.single('file'), (req, res) => {
+        // Aqui você pode manipular a lógica de resposta após o upload
+        res.send('Arquivo enviado com sucesso TESTE.');
+    });
+
+
+
+    
+
     app.route('/users')
         .all(app.config.passport.authenticate())
         .post(admin(app.api.user.save))

@@ -1,7 +1,26 @@
 const bcrypt = require('bcrypt-nodejs')
+const multer = require('multer');
+const path = require('path');
 
 module.exports = app => {
     const { existsOrError, notExistsOrError, equalsOrError } = app.api.validation
+
+    
+
+    // Configuração do Multer para lidar com o upload de arquivos
+    const storage = multer.diskStorage({
+        destination: function (req, file, cb) {
+            cb(null, 'c:/projetos/upload-teste'); // Substitua pelo caminho do diretório desejado
+        },
+        filename: function (req, file, cb) {
+            cb(null, Date.now() + '-' + file.originalname); // Nome do arquivo
+        }
+    });
+    const upload = multer({ storage });
+
+
+
+
 
     const encryptPassword = password => {
         const salt = bcrypt.genSaltSync(10)
@@ -84,5 +103,5 @@ module.exports = app => {
         }
     }
 
-    return { save, get, getById, remove }
+    return { save, get, getById, remove, upload }
 }
